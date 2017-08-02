@@ -1,6 +1,6 @@
 # mini-jest
 
-Attempt at writing my own minimal test runner with an API similar to Jest.
+Attempt at writing my own minimal test runner that implements a subset of the features of Jest.
 
 **Note:** This is just an experiment for my own learning and is in no way meant to be used in production.
 
