@@ -19,67 +19,67 @@ describe('expect tests', () => {
   });
 
   describe('toBeGreaterThan works correctly', () => {
-    test('for positive numbers', () => {
+    test('with positive numbers', () => {
       expect(10).toBeGreaterThan(2);
       expect(20).toBeGreaterThan(10);
     });
 
-    test('for negative numbers', () => {
+    test('with negative numbers', () => {
       expect(-2).toBeGreaterThan(-3);
       expect(-10).toBeGreaterThan(-20);
     });
 
-    test('for mixed numbers', () => {
+    test('with mixed numbers', () => {
       expect(3).toBeGreaterThan(-3);
       expect(-30).not.toBeGreaterThan(-10);
     });
   });
 
   describe('toBeGreaterThanOrEqual works correctly', () => {
-    test('for positive numbers', () => {
+    test('with positive numbers', () => {
       expect(10).toBeGreaterThanOrEqual(2);
       expect(10).toBeGreaterThanOrEqual(10);
     });
 
-    test('for negative numbers', () => {
+    test('with negative numbers', () => {
       expect(-2).toBeGreaterThanOrEqual(-3);
       expect(-10).toBeGreaterThanOrEqual(-10);
     });
 
-    test('for mixed numbers', () => {
+    test('with mixed numbers', () => {
       expect(3).toBeGreaterThanOrEqual(-3);
     });
   });
 
   describe('toBeLessThan works correctly', () => {
-    test('for positive numbers', () => {
+    test('with positive numbers', () => {
       expect(1).toBeLessThan(2);
       expect(10).toBeLessThan(20);
     });
 
-    test('for negative numbers', () => {
+    test('with negative numbers', () => {
       expect(-3).toBeLessThan(-2);
       expect(-20).toBeLessThan(-10);
     });
 
-    test('for mixed numbers', () => {
+    test('with mixed numbers', () => {
       expect(-5).toBeLessThan(5);
       expect(-20).not.toBeLessThan(-30);
     });
   });
 
   describe('toBeLessThanOrEqual works correctly', () => {
-    test('for positive numbers', () => {
+    test('with positive numbers', () => {
       expect(1).toBeLessThanOrEqual(2);
       expect(20).toBeLessThanOrEqual(20);
     });
 
-    test('for negative numbers', () => {
+    test('with negative numbers', () => {
       expect(-3).toBeLessThanOrEqual(-2);
       expect(-10).toBeLessThanOrEqual(-10);
     });
 
-    test('for mixed numbers', () => {
+    test('with mixed numbers', () => {
       expect(-5).toBeLessThanOrEqual(5);
     });
   });

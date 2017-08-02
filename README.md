@@ -20,21 +20,21 @@ expect tests
   ✔ toBe works correctly (1ms)
   ✔ toBeFalsy works correctly (0ms)
   toBeGreaterThan works correctly
-    ✔ for positive numbers (0ms)
-    ✔ for negative numbers (0ms)
-    ✔ for mixed numbers (0ms)
+    ✔ with positive numbers (0ms)
+    ✔ with negative numbers (0ms)
+    ✔ with mixed numbers (0ms)
   toBeGreaterThanOrEqual works correctly
-    ✔ for positive numbers (0ms)
-    ✔ for negative numbers (0ms)
-    ✔ for mixed numbers (0ms)
+    ✔ with positive numbers (0ms)
+    ✔ with negative numbers (0ms)
+    ✔ with mixed numbers (0ms)
   toBeLessThan works correctly
-    ✔ for positive numbers (0ms)
-    ✔ for negative numbers (0ms)
-    ✔ for mixed numbers (0ms)
+    ✔ with positive numbers (0ms)
+    ✔ with negative numbers (0ms)
+    ✔ with mixed numbers (0ms)
   toBeLessThanOrEqual works correctly
-    ✔ for positive numbers (0ms)
-    ✔ for negative numbers (0ms)
-    ✔ for mixed numbers (0ms)
+    ✔ with positive numbers (0ms)
+    ✔ with negative numbers (0ms)
+    ✔ with mixed numbers (0ms)
   ✔ toBeNull works correctly (1ms)
   ✔ toBeTruthy works correctly (0ms)
 ```
