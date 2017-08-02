@@ -8,6 +8,31 @@ Attempt at writing my own minimal test runner with an API similar to Jest.
 
 Similar to Jest. The `describe`, `it`, `test`, `expect` functions are exported.
 
+## Usage
+
+It works for an example taken off [Jest homepage](http://facebook.github.io/jest/docs/en/api.html#describename-fn):
+
+```js
+const { describe, expect, it, test } = require('mini-jest');
+
+const myBeverage = {
+  delicious: true,
+  sour: false,
+};
+
+describe('test that', () => {
+  describe('my beverage', () => {
+    test('is delicious', () => {
+      expect(myBeverage.delicious).toBeTruthy();
+    });
+
+    test('is not sour', () => {
+      expect(myBeverage.sour).toBeFalsy();
+    });
+  });
+});
+```
+
 ## Example
 
 ```sh
