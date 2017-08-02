@@ -1,6 +1,10 @@
 const segments = [];
 const NAME_SEPARATOR = ' › ';
 const INDENDATION_PER_LEVEL = 2;
+const resultsMap = {
+  true: '✔',
+  false: '✖',
+};
 
 function printIndentedLog(level, message) {
   console.log(`${Array(level * INDENDATION_PER_LEVEL).fill(' ').join('')}${message}`);
@@ -17,7 +21,6 @@ function test(testName, testFn) {
   segments.push(testName);
   let passed = false;
   let errorMessage = '';
-  const resultsMap = { true: '✔', false: '✖' };
   const start = Date.now();
   try {
     testFn();
@@ -28,7 +31,7 @@ function test(testName, testFn) {
   const end = Date.now();
   printIndentedLog(segments.length - 1, `${resultsMap[passed]} ${testName} (${end - start}ms)`);
   if (!passed && errorMessage) {
-    printIndentedLog(segments.length, errorMessage);
+    printIndentedLog(segments.length + 1, errorMessage);
   }
   segments.pop();
 }

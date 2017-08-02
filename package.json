@@ -1,0 +1,22 @@
+{
+  "name": "mini-jest",
+  "version": "0.1.0",
+  "description": "Minimal test runner API",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ./__tests__/meta.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangshun/mini-jest.git"
+  },
+  "keywords": [
+    "jest"
+  ],
+  "author": "Tay Yang Shun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yangshun/mini-jest/issues"
+  },
+  "homepage": "https://github.com/yangshun/mini-jest#readme"
+}
