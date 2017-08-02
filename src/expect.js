@@ -58,6 +58,15 @@ expect.extend({
   toBeTruthy: (actual) => {
     return !!actual;
   },
+  toBeUndefined: (actual) => {
+    return actual === undefined;
+  },
+  toContain: (actual, expected) => {
+    return actual.indexOf(expected) > -1;
+  },
+  toHaveLength: (actual, expected) => {
+    return actual.length === expected;
+  },
 });
 
 module.exports = expect;

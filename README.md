@@ -17,7 +17,7 @@ $ npm test
 > node ./__tests__/meta.test.js
 
 expect tests
-  ✔ toBe works correctly (1ms)
+  ✔ toBe works correctly (0ms)
   ✔ toBeFalsy works correctly (0ms)
   toBeGreaterThan works correctly
     ✔ with positive numbers (0ms)
@@ -35,6 +35,9 @@ expect tests
     ✔ with positive numbers (0ms)
     ✔ with negative numbers (0ms)
     ✔ with mixed numbers (0ms)
-  ✔ toBeNull works correctly (1ms)
-  ✔ toBeTruthy works correctly (0ms)
+  ✔ toBeNull works correctly (0ms)
+  ✔ toBeTruthy works correctly (1ms)
+  ✔ toBeUndefined works correctly (0ms)
+  ✔ toContain works correctly (0ms)
+  ✔ toHaveLength works correctly (0ms)
 ```

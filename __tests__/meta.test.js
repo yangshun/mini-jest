@@ -101,4 +101,20 @@ describe('expect tests', () => {
     expect(undefined).not.toBeTruthy();
     expect(false).not.toBeTruthy();
   });
+
+  test('toBeUndefined works correctly', () => {
+    expect(undefined).toBeUndefined();
+    expect(null).not.toBeUndefined();
+  });
+
+  test('toContain works correctly', () => {
+    expect([1, 2, 3]).toContain(1);
+    expect([1, 2, 3]).not.toContain(4);
+  });
+
+  test('toHaveLength works correctly', () => {
+    expect([1, 2, 3]).toHaveLength(3);
+    expect('abc').toHaveLength(3);
+    expect('').not.toHaveLength(5);
+  });
 });
