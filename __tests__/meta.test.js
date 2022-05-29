@@ -1,4 +1,4 @@
-const { describe, expect, it, test } = require('../src');
+const { describe, expect, run, test } = require('../src');
 
 describe('expect tests', () => {
   test('toBe works correctly', () => {
@@ -118,3 +118,5 @@ describe('expect tests', () => {
     expect('').not.toHaveLength(5);
   });
 });
+
+run();

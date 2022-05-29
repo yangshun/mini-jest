@@ -1,4 +1,4 @@
-const { describe, expect, it, test } = require('../src');
+const { describe, run, expect, test } = require('../src');
 
 const myBeverage = {
   delicious: true,
@@ -16,3 +16,5 @@ describe('test that', () => {
     });
   });
 });
+
+run();

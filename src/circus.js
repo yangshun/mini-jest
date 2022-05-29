@@ -1,26 +1,44 @@
-const segments = [];
-const NAME_SEPARATOR = ' › ';
-const INDENDATION_PER_LEVEL = 2;
-const resultsMap = {
-  true: '✔',
-  false: '✖',
-};
+const defaultReporter = require('./reporter');
 
-function printIndentedLog(level, message) {
-  console.log(`${Array(level * INDENDATION_PER_LEVEL).fill(' ').join('')}${message}`);
+const blocks = [
+  {
+    name: 'Root suite',
+    type: 'suite',
+    children: [],
+  },
+];
+let currentSuite = blocks[0];
+
+function describe(name, fn) {
+  const suite = {
+    name,
+    type: 'suite',
+    fn,
+    children: [],
+  };
+  const prevSuite = currentSuite;
+  currentSuite.children.push(suite);
+  currentSuite = suite;
+  fn();
+  currentSuite = prevSuite;
 }
 
-function describe(blockName, blockFn) {
-  printIndentedLog(segments.length, blockName);
-  segments.push(blockName);
-  blockFn();
-  segments.pop();
+function test(name, fn) {
+  currentSuite.children.push({
+    name,
+    type: 'spec',
+    fn,
+    status: 'not_started',
+  });
 }
 
-function test(testName, testFn) {
-  segments.push(testName);
+function runSpec(spec) {
   let passed = false;
-  let errorMessage = '';
+
+  let errorMessage = null;
+  spec.status = 'pending';
+  const testFn = spec.fn;
+
   const start = Date.now();
   try {
     testFn();
@@ -28,14 +46,36 @@ function test(testName, testFn) {
   } catch (err) {
     errorMessage = err;
   }
+
   const end = Date.now();
-  printIndentedLog(segments.length - 1, `${resultsMap[passed]} ${testName} (${end - start}ms)`);
-  if (!passed && errorMessage) {
-    printIndentedLog(segments.length + 1, errorMessage);
-  }
-  segments.pop();
+  spec.status = 'complete';
+  spec.duration = end - start;
+  spec.passed = passed;
+  spec.errorMessage = errorMessage;
 }
 
+function runSuite(suite) {
+  suite.forEach((item) => {
+    if (item.type === 'suite') {
+      runSuite(item.children);
+      return;
+    }
+
+    runSpec(item);
+  });
+}
+
+function run(print = true, reporter = defaultReporter) {
+  runSuite(blocks[0].children);
+
+  if (print) {
+    reporter(blocks[0].children);
+  }
+
+  return blocks[0].children;
+}
+
+module.exports.run = run;
 module.exports.describe = describe;
 module.exports.test = test;
 module.exports.it = test;
