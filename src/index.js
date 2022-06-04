@@ -1,8 +1,4 @@
-const expect = require('./expect');
-const circus = require('./circus');
+import { run, describe, test } from './runner.js';
+import { expect } from 'expect';
 
-module.exports.expect = expect;
-module.exports.run = circus.run;
-module.exports.describe = circus.describe;
-module.exports.test = circus.test;
-module.exports.it = circus.it;
+export { run, describe, test, expect };

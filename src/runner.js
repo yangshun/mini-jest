@@ -1,4 +1,4 @@
-const defaultReporter = require('./reporter');
+import defaultReporter from './reporter.js';
 
 const blocks = [
   {
@@ -75,7 +75,4 @@ function run(print = true, reporter = defaultReporter) {
   return blocks[0].children;
 }
 
-module.exports.run = run;
-module.exports.describe = describe;
-module.exports.test = test;
-module.exports.it = test;
+export { run, describe, test, test as it };

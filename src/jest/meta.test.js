@@ -1,5 +1,3 @@
-const { describe, expect, run, test } = require('../src');
-
 describe('expect tests', () => {
   test('toBe works correctly', () => {
     expect(1).toBe(1);
@@ -118,5 +116,3 @@ describe('expect tests', () => {
     expect('').not.toHaveLength(5);
   });
 });
-
-run();

@@ -1,4 +1,4 @@
-const { describe, run, expect, test } = require('../src');
+import { describe, expect, run, test } from '../index.js';
 
 const myBeverage = {
   delicious: true,

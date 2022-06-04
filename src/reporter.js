@@ -34,4 +34,4 @@ function reporter(results) {
   console.log(logs.join('\n'));
 }
 
-module.exports = reporter;
+export default reporter;
